@@ -22,6 +22,6 @@ class MethodChannelPianoAnalyticsPlugin extends PianoAnalyticsPluginPlatform {
   Future<void> sendEvent(
       {required String eventName, required Map<String, dynamic> data}) async {
     await methodChannel.invokeMethod<void>(
-        'sendEvent', {'pageDisplay': eventName, 'data': data});
+        'sendEvent', {'eventName': eventName, 'data': data});
   }
 }

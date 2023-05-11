@@ -1,6 +1,6 @@
 name: piano_analytics_plugin
 description: A flutter plugin for use piano anlaytics SDK. Piano Analytics is the logical progression to our Analytics Suite 2
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/alex596/piano_analytics_plugin
 
 environment:

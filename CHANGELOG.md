@@ -7,3 +7,7 @@
 ## 0.0.2
 
 * Format dart lib file
+
+## 0.0.3
+
+* Fix : Replace pageDisplay with eventName
