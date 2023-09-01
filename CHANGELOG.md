@@ -11,3 +11,8 @@
 ## 0.0.3
 
 * Fix : Replace pageDisplay with eventName
+
+## 0.0.4
+
+* Fix : Downgrade iOS plugin target for iOS 10
+* Refactor : Replace deprecated method setMockMethodCallHandler

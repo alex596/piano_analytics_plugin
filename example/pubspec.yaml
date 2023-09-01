@@ -1,10 +1,10 @@
 name: piano_analytics_plugin_example
 description: Demonstrates how to use the piano_analytics_plugin plugin.
-version: 0.0.3
+version: 0.0.4
 publish_to: 'none'
 
 environment:
-  sdk: '>=2.19.6 <3.0.0'
+  sdk: '>=2.19.6 <4.0.0'
 
 dependencies:
   flutter:
