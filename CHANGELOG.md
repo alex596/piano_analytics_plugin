@@ -16,3 +16,9 @@
 
 * Fix : Downgrade iOS plugin target for iOS 10
 * Refactor : Replace deprecated method setMockMethodCallHandler
+
+## 0.0.5
+
+* Feat : Update piano android sdk to v3.3.5 for android
+* Refactor : add android minSDK to 21
+* Refactor : Delete cupertino_icons dependencies

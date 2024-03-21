@@ -27,6 +27,7 @@ apply plugin: 'kotlin-android'
 android {
     namespace "com.plugin.example.piano_analytics_plugin"
     compileSdkVersion 33
+    minSdkVersion 21
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -48,5 +49,5 @@ android {
 }
 
 dependencies {
-    implementation 'io.piano:analytics:3.3.4'
+    implementation 'io.piano:analytics:3.3.5'
 }
