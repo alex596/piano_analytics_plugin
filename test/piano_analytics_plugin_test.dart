@@ -4,7 +4,9 @@ import 'package:piano_analytics_plugin/piano_analytics_plugin_platform_interface
 import 'package:piano_analytics_plugin/piano_analytics_plugin_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-class MockPianoAnalyticsPluginPlatform with MockPlatformInterfaceMixin implements PianoAnalyticsPluginPlatform {
+class MockPianoAnalyticsPluginPlatform
+    with MockPlatformInterfaceMixin
+    implements PianoAnalyticsPluginPlatform {
   @override
   Future<void> setConfiguration({required String collectDomain, required int site}) async {}
 
@@ -19,18 +21,24 @@ void main() {
     expect(initialPlatform, isInstanceOf<MethodChannelPianoAnalyticsPlugin>());
   });
 
-  test('setConfiguration', () async{
+  test('setConfiguration', () async {
     PianoAnalyticsPlugin pianoAnalyticsPlugin = PianoAnalyticsPlugin();
     MockPianoAnalyticsPluginPlatform fakePlatform = MockPianoAnalyticsPluginPlatform();
     PianoAnalyticsPluginPlatform.instance = fakePlatform;
-    expect(pianoAnalyticsPlugin.setConfiguration(collectDomain: 'fake_domain', site: 42), isA<void>());
+    expect(
+      pianoAnalyticsPlugin.setConfiguration(collectDomain: 'fake_domain', site: 42),
+      isA<void>(),
+    );
   });
 
-  test('sendEvent', () async{
+  test('sendEvent', () async {
     PianoAnalyticsPlugin pianoAnalyticsPlugin = PianoAnalyticsPlugin();
     MockPianoAnalyticsPluginPlatform fakePlatform = MockPianoAnalyticsPluginPlatform();
     PianoAnalyticsPluginPlatform.instance = fakePlatform;
 
-    expect(pianoAnalyticsPlugin.sendEvent(eventName: 'fake_event', data: {}), isA<void>());
+    expect(
+      pianoAnalyticsPlugin.sendEvent(eventName: 'fake_event', data: {}),
+      isA<void>(),
+    );
   });
 }

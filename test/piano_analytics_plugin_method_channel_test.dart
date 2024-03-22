@@ -9,24 +9,28 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   setUp(() {
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(channel,
-      (MethodCall methodCall) async {
-        return '42';
-      }
-    );
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(channel, (MethodCall methodCall) async {
+      return '42';
+    });
   });
 
   tearDown(() {
-    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(channel,
-        null
-    );
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(channel, null);
   });
 
   test('setConfiguration', () async {
-    expect(platform.setConfiguration(collectDomain: 'fake_domain', site: 42), isA<void>());
+    expect(
+      platform.setConfiguration(collectDomain: 'fake_domain', site: 42),
+      isA<void>(),
+    );
   });
 
   test('sendEvent', () async {
-    expect(platform.sendEvent(eventName: 'event_fake', data: {}), isA<void>());
+    expect(
+      platform.sendEvent(eventName: 'event_fake', data: {}),
+      isA<void>(),
+    );
   });
 }

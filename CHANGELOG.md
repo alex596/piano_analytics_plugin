@@ -19,6 +19,8 @@
 
 ## 0.0.5
 
+* Fix : Fix namespace for android (Thanks @SimonErich)
 * Feat : Update piano android sdk to v3.3.5 for android
-* Refactor : add android minSDK to 21
+* Refactor : add android minSDK to 21 (Thanks @FDuhen)
 * Refactor : Delete cupertino_icons dependencies
+* Refactor : Reformat code with dartFormat

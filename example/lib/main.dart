@@ -51,29 +51,30 @@ class _MyAppState extends State<MyApp> {
               Text(
                 "Event Name : $eventName",
               ),
-              const SizedBox(height: 8,),
+              const SizedBox(height: 8),
               Text(
                 "Data : ${fakeData.toString()}",
               ),
-              const SizedBox(height: 12,),
+              const SizedBox(height: 12),
               const Divider(),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   MaterialButton(
-                      color: Colors.lightBlueAccent,
-                      child: const Text("Track event", style: TextStyle(color: Colors.white)),
-                      onPressed: (){
-                        pianoAnalyticsPlugin.sendEvent(eventName: eventName, data:fakeData)
-                            .onError((error, stackTrace) => debugPrint(error.toString()));
-                      }
+                    color: Colors.lightBlueAccent,
+                    child: const Text("Track event", style: TextStyle(color: Colors.white)),
+                    onPressed: () {
+                      pianoAnalyticsPlugin
+                          .sendEvent(eventName: eventName, data: fakeData)
+                          .onError((error, stackTrace) => debugPrint(error.toString()));
+                    },
                   ),
                 ],
-              )
+              ),
             ],
           ),
-        )
+        ),
       ),
     );
   }
