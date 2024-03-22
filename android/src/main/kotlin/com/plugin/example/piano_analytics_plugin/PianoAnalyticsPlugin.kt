@@ -8,9 +8,10 @@ import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 
-import io.piano.analytics.Event;
-import io.piano.analytics.PianoAnalytics;
-import io.piano.analytics.Configuration;
+//import io.piano.android.analytics.Event;
+import io.piano.android.analytics.model.Event
+import io.piano.android.analytics.PianoAnalytics
+import io.piano.android.analytics.Configuration
 
 object PAEvents {
   const val SET_CONFIGURATION = "setConfiguration"
