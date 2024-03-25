@@ -42,11 +42,11 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 26
+        minSdkVersion 21
         targetSdkVersion 33
     }
 }
 
 dependencies {
-    implementation 'io.piano:analytics:3.3.4'
+    implementation 'io.piano:analytics:3.2.1'
 }
