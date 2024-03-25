@@ -1,6 +1,7 @@
 package com.plugin.example.piano_analytics_plugin
 
 import androidx.annotation.NonNull
+import android.content.Context
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
@@ -10,6 +11,8 @@ import io.flutter.plugin.common.MethodChannel.Result
 
 //import io.piano.android.analytics.Event;
 import io.piano.android.analytics.model.Event
+import io.piano.android.analytics.model.Property
+import io.piano.android.analytics.model.PropertyName
 import io.piano.android.analytics.PianoAnalytics
 import io.piano.android.analytics.Configuration
 
@@ -26,11 +29,13 @@ class PianoAnalyticsPlugin: FlutterPlugin, MethodCallHandler {
   /// when the Flutter Engine is detached from the Activity
   private lateinit var channel : MethodChannel
   private lateinit var pa: PianoAnalytics
+  private lateinit var applicationContext: Context
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "piano_analytics_plugin")
     channel.setMethodCallHandler(this)
-    pa = PianoAnalytics.getInstance(flutterPluginBinding.applicationContext)
+    //pa = PianoAnalytics.getInstance(flutterPluginBinding.applicationContext)
+    applicationContext = flutterPluginBinding.applicationContext
   }
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
@@ -46,12 +51,12 @@ class PianoAnalyticsPlugin: FlutterPlugin, MethodCallHandler {
           if(collectDomain.isEmpty()){
             result.error("500", "collectDomain is required", null)
           }else{
-            pa.setConfiguration(
-              Configuration.Builder()
-                .withCollectDomain(collectDomain)
-                .withSite(site)
-                .build()
-            )
+            val configuration = Configuration.Builder(
+              collectDomain = collectDomain,
+              site = site,
+            ).build()
+
+            pa = PianoAnalytics.init(applicationContext, configuration)
           }
         }
 
@@ -62,7 +67,21 @@ class PianoAnalyticsPlugin: FlutterPlugin, MethodCallHandler {
             result.error("500", "eventName is required", null)
           } else {
             val data: HashMap<String, Any?> = arguments["data"] as HashMap<String, Any?>
-            pa.sendEvent(Event(eventName, data))
+
+            //val properties: Array<Property> = emptyArray<Property>()
+            //val propertie = Property(PropertyName.ANY_PROPERTY, data)
+
+            PianoAnalytics.getInstance().apply {
+              sendEvents(
+                Event.Builder(eventName)
+                  // TODO('A Refaire') : En attente réponse piano pour l'implementation des properties
+                  .properties(
+                    Property(PropertyName.ANY_PROPERTY, data)
+                  )
+                  .build()
+              )
+            }
+           //pa.sendEvent(Event(eventName, data))
           }
         }
 
