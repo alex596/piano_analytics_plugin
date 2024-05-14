@@ -2,9 +2,9 @@ import 'piano_analytics_plugin_platform_interface.dart';
 
 class PianoAnalyticsPlugin {
   Future<void> setConfiguration(
-      {required String collectDomain, required int site}) {
+      {required String collectDomain, required int site, String? visitorID}) {
     return PianoAnalyticsPluginPlatform.instance
-        .setConfiguration(collectDomain: collectDomain, site: site);
+        .setConfiguration(collectDomain: collectDomain, site: site, visitorID: visitorID);
   }
 
   Future<void> sendEvent(

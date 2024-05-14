@@ -12,9 +12,9 @@ class MethodChannelPianoAnalyticsPlugin extends PianoAnalyticsPluginPlatform {
   /// Used to configure your app with piano analytics configuration.
   @override
   Future<void> setConfiguration(
-      {required String collectDomain, required int site}) async {
+      {required String collectDomain, required int site, String? visitorID}) async {
     await methodChannel.invokeMethod<void>(
-        'setConfiguration', {'collectDomain': collectDomain, 'site': site});
+        'setConfiguration', {'collectDomain': collectDomain, 'site': site, 'visitorID': visitorID});
   }
 
   /// Used to send event with name and data for this event.

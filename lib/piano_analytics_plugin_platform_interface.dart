@@ -27,7 +27,7 @@ abstract class PianoAnalyticsPluginPlatform extends PlatformInterface {
   /// Sets the [collectDomain] and [site], which specifies configuration
   /// in your app.
   Future<void> setConfiguration(
-      {required String collectDomain, required int site}) {
+      {required String collectDomain, required int site, String? visitorID}) {
     throw UnimplementedError('setConfiguration() has not been implemented.');
   }
 

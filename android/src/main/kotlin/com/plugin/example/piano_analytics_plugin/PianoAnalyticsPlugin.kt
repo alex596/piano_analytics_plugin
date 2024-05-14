@@ -39,29 +39,40 @@ class PianoAnalyticsPlugin: FlutterPlugin, MethodCallHandler {
 
       when (call.method) {
         PAEvents.SET_CONFIGURATION -> {
-          val collectDomain: String = arguments["collectDomain"] as String
-          val site: Int = arguments["site"] as Int
+          val collectDomain = arguments["collectDomain"] as? String
+          val site = arguments["site"] as? Int
 
-          if(collectDomain.isEmpty()){
+          if (collectDomain?.isNullOrEmpty() ?: true || site == null) {
             result.error("500", "collectDomain is required", null)
-          }else{
-            pa.setConfiguration(
-              Configuration.Builder()
-                .withCollectDomain(collectDomain)
-                .withSite(site)
-                .build()
-            )
+          } else {
+            val visitorID = arguments["visitorID"] as? String
+            if (visitorID?.isNullOrEmpty() ?: true ) {
+              pa.setConfiguration(
+                Configuration.Builder()
+                  .withCollectDomain(collectDomain)
+                  .withSite(site)
+                  .build()
+              )
+            } else {
+              pa.setConfiguration(
+                Configuration.Builder()
+                  .withCollectDomain(collectDomain)
+                  .withSite(site)
+                  .withVisitorID(visitorID!!)
+                  .build()
+              )
+            }
           }
         }
 
         PAEvents.SEND_EVENT -> {
-          val eventName: String = arguments["eventName"] as String
+          val eventName = arguments["eventName"] as? String
 
-          if(eventName.isEmpty()){
+          if (eventName?.isNullOrEmpty() ?: true) {
             result.error("500", "eventName is required", null)
           } else {
             val data: HashMap<String, Any?> = arguments["data"] as HashMap<String, Any?>
-            pa.sendEvent(Event(eventName, data))
+            pa.sendEvent(Event(eventName!!, data))
           }
         }
 

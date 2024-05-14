@@ -21,7 +21,7 @@ To use this plugin, add piano_analytics_plugin as a dependency in your pubspec.y
 This function is used for set piano analytics configuration.
 
 ```
-    Future<void> setConfiguration({required String collectDomain, required int site});
+    Future<void> setConfiguration({required String collectDomain, required int site, String? visitorID});
 ```
 
 ### Send event

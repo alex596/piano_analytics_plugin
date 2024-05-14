@@ -22,7 +22,11 @@ void main() {
     );
   });
 
-  test('setConfiguration', () async {
+  test('setConfiguration with visitorID', () async {
+    expect(platform.setConfiguration(collectDomain: 'fake_domain', site: 42, visitorID: "fake_visitorID"), isA<void>());
+  });
+
+  test('setConfiguration less visitorID', () async {
     expect(platform.setConfiguration(collectDomain: 'fake_domain', site: 42), isA<void>());
   });
 
