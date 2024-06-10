@@ -15,7 +15,7 @@ A flutter plugin for use piano anlaytics.
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'PianoAnalytics/iOS', '>=3.0'
+  s.dependency 'PianoAnalytics/iOS', '>=3.1'
   s.platform = :ios, '10.0'
 
   # Flutter.framework does not contain a i386 slice.
