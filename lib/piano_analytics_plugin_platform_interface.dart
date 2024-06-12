@@ -8,8 +8,7 @@ abstract class PianoAnalyticsPluginPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static PianoAnalyticsPluginPlatform _instance =
-      MethodChannelPianoAnalyticsPlugin();
+  static PianoAnalyticsPluginPlatform _instance = MethodChannelPianoAnalyticsPlugin();
 
   /// The default instance of [PianoAnalyticsPluginPlatform] to use.
   ///
@@ -26,8 +25,11 @@ abstract class PianoAnalyticsPluginPlatform extends PlatformInterface {
 
   /// Sets the [collectDomain] and [site], which specifies configuration
   /// in your app.
-  Future<void> setConfiguration(
-      {required String collectDomain, required int site}) {
+  Future<void> setConfiguration({
+    required String collectDomain,
+    required int site,
+    String? privacyDefaultMode,
+  }) {
     throw UnimplementedError('setConfiguration() has not been implemented.');
   }
 
@@ -37,8 +39,7 @@ abstract class PianoAnalyticsPluginPlatform extends PlatformInterface {
   /// This helps identify the areas in your app where users spend their time
   ///
   /// [data] it allows to add information about the tracks
-  Future<void> sendEvent(
-      {required String eventName, required Map<String, dynamic> data}) {
+  Future<void> sendEvent({required String eventName, required Map<String, dynamic> data}) {
     throw UnimplementedError('sendEvent() has not been implemented.');
   }
 }
