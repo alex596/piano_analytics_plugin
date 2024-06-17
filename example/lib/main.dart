@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    pianoAnalyticsPlugin.setConfiguration(collectDomain: domaine, site: site);
+    pianoAnalyticsPlugin.setConfiguration(collectDomain: domaine, site: site, privacyDefaultMode: 'exempt');
   }
 
   @override
