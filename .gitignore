@@ -29,3 +29,10 @@ migrate_working_dir/
 .packages
 build/
 example/android/~/.gradle/
+.idea/*
+.dart_tool/*
+.metadata
+
+
+android/gradle.properties
+example/android/gradle/wrapper/gradle-wrapper.properties

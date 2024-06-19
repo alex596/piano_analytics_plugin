@@ -39,7 +39,10 @@ abstract class PianoAnalyticsPluginPlatform extends PlatformInterface {
   /// This helps identify the areas in your app where users spend their time
   ///
   /// [data] it allows to add information about the tracks
-  Future<void> sendEvent({required String eventName, required Map<String, dynamic> data}) {
+  Future<void> sendEvent({
+    required String eventName,
+    required Map<String, dynamic> data,
+  }) {
     throw UnimplementedError('sendEvent() has not been implemented.');
   }
 }

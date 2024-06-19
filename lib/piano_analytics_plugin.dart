@@ -13,7 +13,13 @@ class PianoAnalyticsPlugin {
     );
   }
 
-  Future<void> sendEvent({required String eventName, required Map<String, dynamic> data}) {
-    return PianoAnalyticsPluginPlatform.instance.sendEvent(eventName: eventName, data: data);
+  Future<void> sendEvent({
+    required String eventName,
+    required Map<String, dynamic> data,
+  }) {
+    return PianoAnalyticsPluginPlatform.instance.sendEvent(
+      eventName: eventName,
+      data: data,
+    );
   }
 }

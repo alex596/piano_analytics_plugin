@@ -2,7 +2,7 @@ group 'com.plugin.example.piano_analytics_plugin'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    ext.kotlin_version = '1.9.0'
     repositories {
         google()
         mavenCentral()

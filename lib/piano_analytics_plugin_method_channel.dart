@@ -16,16 +16,28 @@ class MethodChannelPianoAnalyticsPlugin extends PianoAnalyticsPluginPlatform {
     required int site,
     String? privacyDefaultMode,
   }) async {
-    await methodChannel.invokeMethod<void>('setConfiguration', {
-      'collectDomain': collectDomain,
-      'site': site,
-      'privacyDefaultMode': privacyDefaultMode,
-    });
+    await methodChannel.invokeMethod<void>(
+      'setConfiguration',
+      {
+        'collectDomain': collectDomain,
+        'site': site,
+        'privacyDefaultMode': privacyDefaultMode,
+      },
+    );
   }
 
   /// Used to send event with name and data for this event.
   @override
-  Future<void> sendEvent({required String eventName, required Map<String, dynamic> data}) async {
-    await methodChannel.invokeMethod<void>('sendEvent', {'eventName': eventName, 'data': data});
+  Future<void> sendEvent({
+    required String eventName,
+    required Map<String, dynamic> data,
+  }) async {
+    await methodChannel.invokeMethod<void>(
+      'sendEvent',
+      {
+        'eventName': eventName,
+        'data': data,
+      },
+    );
   }
 }
