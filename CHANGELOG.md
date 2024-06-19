@@ -1,5 +1,12 @@
 ## 0.0.5
-* Update iOS SDK to >= 3.1 for add PrivacyInfo file
+
+* Fix : Fix namespace for android (**Thanks to @SimonErich**)
+* Fix : Add privacy files for iOS (**Thanks to @ThomasEcalle**)
+* Refactor : add android minSDK to 21 (**Thanks to @FDuhen**)
+* Feat : Update piano android sdk to v3.3.5 for android
+* Refactor : Delete cupertino_icons dependencies
+* Refactor : Reformat code with dartFormat
+* Refactor : Update plugin for Flutter version (3.19.6)
 
 ## 0.0.4
 
@@ -14,7 +21,7 @@
 
 * Format dart lib file
 
-## 0.0.1
+# 0.0.1
 
 * Initial release of the plugin.
 * **Implements iOS SDK** with minimal configuration required (`String collectDomain`, `int site`)

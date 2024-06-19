@@ -2,8 +2,10 @@ PODS:
   - Flutter (1.0.0)
   - piano_analytics_plugin (0.0.1):
     - Flutter
-    - PianoAnalytics/iOS (>= 3.0)
-  - PianoAnalytics/iOS (3.0.4)
+    - PianoAnalytics/iOS (>= 3.1)
+  - PianoAnalytics/iOS (3.1.2):
+    - PianoConsents (~> 1.0.7)
+  - PianoConsents (1.0.7)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -12,6 +14,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - PianoAnalytics
+    - PianoConsents
 
 EXTERNAL SOURCES:
   Flutter:
@@ -20,10 +23,11 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/piano_analytics_plugin/ios"
 
 SPEC CHECKSUMS:
-  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  piano_analytics_plugin: b45515bbba3fcebfd444fdc46b93c9ba89963d1a
-  PianoAnalytics: 812c1fc4d6b440200ac16a2493f72539cfc38c5c
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  piano_analytics_plugin: 81b546fad1bdc2266fb18d3701fb296bb1bbb797
+  PianoAnalytics: 2a8c51d7f59e85c891a0ecf1256852a6cfd94504
+  PianoConsents: aed720bf57e25553dc599c0c0b1ed3a1d13df9a0
 
-PODFILE CHECKSUM: 775997f741c536251164e3eacf6e34abf2eb7a17
+PODFILE CHECKSUM: 1959d098c91d8a792531a723c4a9d7e9f6a01e38
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.15.2
