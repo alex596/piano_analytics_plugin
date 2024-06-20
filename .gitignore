@@ -34,5 +34,5 @@ example/android/~/.gradle/
 .metadata
 
 
-android/gradle.properties
-example/android/gradle/wrapper/gradle-wrapper.properties
+android/gradle_old.properties
+example/android/gradle/wrapper/gradle-wrapper_old.properties
