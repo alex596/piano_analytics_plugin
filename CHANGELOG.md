@@ -1,3 +1,23 @@
+## 0.0.6
+
+* Feat : Add possibility to set path on configuration
+* Feat : Add possibility to set customUserAgent on configuration
+* Feat : Add possibility to set crashDetection on configuration
+* Feat : Add possibility to set sessionBackgroundDuration on configuration
+* Feat : Add possibility to set ignoreLimitedAdvertisingTracking on configuration
+* Feat : Add possibility to set sessionBackgroundDuration on configuration
+* Feat : Add possibility to set privacyDefaultMode on configuration
+* Feat : Add possibility to set offlineEncryptionMode on configuration
+* Feat : Add possibility to set offlineStorageMode on configuration
+* Feat : Add possibility to set storageLifetimePrivacy on configuration
+* Feat : Add possibility to set storageLifetimeUser on configuration
+* Feat : Add possibility to set storageLifetimeVisitor on configuration
+* Feat : Add possibility to set visitorStorageMode on configuration
+* Feat : Add possibility to set visitorIdTypeMode on configuration
+* Feat : Add possibility to set visitorId on configuration
+
+[Documentation for configuration](https://developers.atinternet-solutions.com/piano-analytics/data-collection/sdks/ios-swift#configuration)
+
 ## 0.0.5
 
 * Fix : Fix namespace for android (**Thanks to @SimonErich**)

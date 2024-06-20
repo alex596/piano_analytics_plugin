@@ -21,7 +21,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.plugin.example.piano_analytics_plugin
+        package: com.plugin.piano_analytics_plugin
         pluginClass: PianoAnalyticsPlugin
       ios:
         pluginClass: PianoAnalyticsPlugin

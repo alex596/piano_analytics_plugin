@@ -1,3 +1,4 @@
+import 'package:piano_analytics_plugin/piano_analytics_configuration_modes.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'piano_analytics_plugin_method_channel.dart';
@@ -25,10 +26,26 @@ abstract class PianoAnalyticsPluginPlatform extends PlatformInterface {
 
   /// Sets the [collectDomain] and [site], which specifies configuration
   /// in your app.
+  /// Configuration documentation [https://developers.atinternet-solutions.com/piano-analytics/data-collection/sdks/ios-swift#configuration]
+  ///
   Future<void> setConfiguration({
     required String collectDomain,
     required int site,
-    String? privacyDefaultMode,
+    String? path,
+    String? customUserAgent,
+    bool crashDetection = true,
+    int sessionBackgroundDuration = 30,
+    bool ignoreLimitedAdvertisingTracking = false,
+    bool sendEventWhenOptout = true,
+    PrivacyDefaultMode privacyDefaultMode = PrivacyDefaultMode.optin,
+    OfflineEncryptionMode offlineEncryptionMode = OfflineEncryptionMode.force,
+    OfflineStorageMode offlineStorageMode = OfflineStorageMode.required,
+    int storageLifetimePrivacy = 395,
+    int storageLifetimeUser = 395,
+    int storageLifetimeVisitor = 395,
+    VisitorStorageMode visitorStorageMode = VisitorStorageMode.fixed,
+    VisitorIdTypeMode visitorIdTypeMode = VisitorIdTypeMode.uuid,
+    String? visitorId,
   }) {
     throw UnimplementedError('setConfiguration() has not been implemented.');
   }

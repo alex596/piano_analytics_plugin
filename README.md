@@ -21,8 +21,10 @@ To use this plugin, add piano_analytics_plugin as a dependency in your pubspec.y
 This function is used for set piano analytics configuration.
 
 ```
-    Future<void> setConfiguration({required String collectDomain, required int site});
+    Future<void> setConfiguration({required String collectDomain, required int site, String? privacyDefaultMode, String? visitorId,});
 ```
+
+[Documentation for configuration](https://developers.atinternet-solutions.com/piano-analytics/data-collection/sdks/ios-swift#configuration)
 
 ### Send event
 This function is used send event.
