@@ -40,6 +40,14 @@ class PianoAnalyticsPlugin : FlutterPlugin, MethodCallHandler {
             when (call.method) {
                 PAEvents.SET_CONFIGURATION -> {
                     val collectDomain: String = arguments["collectDomain"] as String
+
+                    /// Return error if collectDomain is empty
+                    if (collectDomain.isEmpty()) {
+                        Log.e("PianoAnalyticsPlugin", "collectDomain is required")
+                        result.error("500", "collectDomain is required", null)
+                        return
+                    }
+
                     val site: Int = arguments["site"] as Int
                     val path: String? = arguments["path"] as String?
                     val customUserAgent: String? = arguments["customUserAgent"] as String?
@@ -88,11 +96,6 @@ class PianoAnalyticsPlugin : FlutterPlugin, MethodCallHandler {
                     }
 
                     val visitorId: String? = arguments["visitorId"] as String?
-
-                    if (collectDomain.isEmpty()) {
-                        result.error("500", "collectDomain is required", null)
-                        return
-                    }
 
                     pa.setConfiguration(
                         Configuration.Builder()

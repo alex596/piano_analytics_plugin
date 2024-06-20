@@ -41,7 +41,7 @@ enum class VisitorStorageModeP(val sdkName: VisitorStorageMode) {
 /// Careful when this type used : https://developer.android.com/training/articles/user-data-ids
 enum class VisitorIdTypeModeP(val sdkName: VisitorIDType) {
     uuid(VisitorIDType.UUID),
-    androidId(VisitorIDType.UUID),
+    androidId(VisitorIDType.ANDROID_ID),
     advertisingId(VisitorIDType.ADVERTISING_ID),
     googleAdvertisingId(VisitorIDType.GOOGLE_ADVERTISING_ID),
     huaweuOpenAdvertisingId(VisitorIDType.HUAWEI_OPEN_ADVERTISING_ID)
