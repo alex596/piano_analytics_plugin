@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:piano_analytics_plugin/piano_analytics_configuration_modes.dart';
 import 'package:piano_analytics_plugin/piano_analytics_plugin.dart';
 
 void main() {
@@ -31,7 +32,21 @@ class _MyAppState extends State<MyApp> {
     pianoAnalyticsPlugin.setConfiguration(
       collectDomain: domaine,
       site: site,
-      privacyDefaultMode: 'exempt',
+      path: "fake_path",
+      crashDetection: false,
+      customUserAgent: "fake_agent",
+      offlineEncryptionMode: OfflineEncryptionMode.force,
+      ignoreLimitedAdvertisingTracking: false,
+      offlineStorageMode: OfflineStorageMode.always,
+      sendEventWhenOptout: false,
+      sessionBackgroundDuration: 1,
+      storageLifetimePrivacy: 1,
+      storageLifetimeUser: 1,
+      storageLifetimeVisitor: 1,
+      visitorId: "fake_visitor",
+      visitorIdTypeMode: VisitorIdTypeMode.advertisingId,
+      visitorStorageMode: VisitorStorageMode.relative,
+      privacyDefaultMode: PrivacyDefaultMode.exempt,
     );
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:piano_analytics_plugin/piano_analytics_configuration_modes.dart';
 import 'package:piano_analytics_plugin/piano_analytics_plugin.dart';
 import 'package:piano_analytics_plugin/piano_analytics_plugin_method_channel.dart';
 import 'package:piano_analytics_plugin/piano_analytics_plugin_platform_interface.dart';
@@ -11,7 +12,21 @@ class MockPianoAnalyticsPluginPlatform
   Future<void> setConfiguration({
     required String collectDomain,
     required int site,
-    String? privacyDefaultMode,
+    String? path,
+    String? customUserAgent,
+    bool crashDetection = true,
+    int sessionBackgroundDuration = 30,
+    bool ignoreLimitedAdvertisingTracking = false,
+    bool sendEventWhenOptout = true,
+    PrivacyDefaultMode privacyDefaultMode = PrivacyDefaultMode.optin,
+    OfflineEncryptionMode offlineEncryptionMode = OfflineEncryptionMode.force,
+    OfflineStorageMode offlineStorageMode = OfflineStorageMode.required,
+    int storageLifetimePrivacy = 395,
+    int storageLifetimeUser = 395,
+    int storageLifetimeVisitor = 395,
+    VisitorStorageMode visitorStorageMode = VisitorStorageMode.fixed,
+    VisitorIdTypeMode visitorIdTypeMode = VisitorIdTypeMode.uuid,
+    String? visitorId,
   }) async {}
 
   @override
@@ -41,7 +56,44 @@ void main() {
       MockPianoAnalyticsPluginPlatform fakePlatform = MockPianoAnalyticsPluginPlatform();
       PianoAnalyticsPluginPlatform.instance = fakePlatform;
       expect(
-        pianoAnalyticsPlugin.setConfiguration(collectDomain: 'fake_domain', site: 42),
+        pianoAnalyticsPlugin.setConfiguration(
+          collectDomain: 'fake_collect_domain',
+          site: 42,
+        ),
+        isA<void>(),
+      );
+    },
+  );
+
+  test(
+    'setConfiguration with privacyDefaultMode',
+    () async {
+      PianoAnalyticsPlugin pianoAnalyticsPlugin = PianoAnalyticsPlugin();
+      MockPianoAnalyticsPluginPlatform fakePlatform = MockPianoAnalyticsPluginPlatform();
+      PianoAnalyticsPluginPlatform.instance = fakePlatform;
+      expect(
+        pianoAnalyticsPlugin.setConfiguration(
+          collectDomain: 'fake_collect_domain',
+          site: 42,
+          privacyDefaultMode: PrivacyDefaultMode.optout,
+        ),
+        isA<void>(),
+      );
+    },
+  );
+
+  test(
+    'setConfiguration with visitorId',
+    () async {
+      PianoAnalyticsPlugin pianoAnalyticsPlugin = PianoAnalyticsPlugin();
+      MockPianoAnalyticsPluginPlatform fakePlatform = MockPianoAnalyticsPluginPlatform();
+      PianoAnalyticsPluginPlatform.instance = fakePlatform;
+      expect(
+        pianoAnalyticsPlugin.setConfiguration(
+          collectDomain: 'fake_collect_domain',
+          visitorId: "fake_visitor_id",
+          site: 42,
+        ),
         isA<void>(),
       );
     },
@@ -55,7 +107,10 @@ void main() {
       PianoAnalyticsPluginPlatform.instance = fakePlatform;
 
       expect(
-        pianoAnalyticsPlugin.sendEvent(eventName: 'fake_event', data: {}),
+        pianoAnalyticsPlugin.sendEvent(
+          eventName: 'fake_event',
+          data: {},
+        ),
         isA<void>(),
       );
     },

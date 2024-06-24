@@ -1,4 +1,4 @@
-group 'com.plugin.example.piano_analytics_plugin'
+group 'com.plugin.piano_analytics_plugin'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -49,4 +49,5 @@ android {
 
 dependencies {
     implementation 'io.piano:analytics:3.2.1'
+    //implementation 'io.piano.android:analytics:3.4.0'
 }
