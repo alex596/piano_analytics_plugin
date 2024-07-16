@@ -9,6 +9,9 @@ To read the developers documentation, see [Pinao Analytics](https://developers.a
 
 *Note*: This plugin is still under development, and some APIs might not be available yet. [Feedback](https://github.com/flutter/flutter/issues) and [Pull Requests](https://github.com/flutter/plugins/pulls) are most welcome!
 
+## Versions
+The different versions are available in the [changelog file](./CHANGELOG.md)
+
 ### Mobile Support 
  - [iOS](https://github.com/at-internet/piano-analytics-apple)
  - [Android](https://github.com/at-internet/piano-analytics-android)
