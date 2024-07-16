@@ -1,3 +1,6 @@
+## 0.0.6+1
+*Fix : Delete PADefaultConfiguration_1.swift because is duplicate (**Thanks to @oscarnarsomnie**)
+
 ## 0.0.6
 
 * Feat : Add possibility to set path on configuration
