@@ -1,5 +1,5 @@
 ## 0.0.7
-*Fix : Delete PADefaultConfiguration_1.swift because is duplicate (**Thanks to @oscarnarsomnie**)
+* Fix : Delete PADefaultConfiguration_1.swift because is duplicate (**Thanks to @oscarnarsomnie**)
 
 ## 0.0.6
 
