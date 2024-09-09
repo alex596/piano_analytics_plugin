@@ -1,3 +1,6 @@
+## 0.0.9
+* Feat : Use dart format for plugin statistic
+
 ## 0.0.8
 * Fix : Set configuration without visitorId if this is empty (**Thanks to @kayb-swr**)
 * Fix(adnroid) : Delete namespace declaration for android 14 (**Thanks to @NikBenson**)
