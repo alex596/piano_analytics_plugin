@@ -1,6 +1,6 @@
 name: piano_analytics_plugin_example
 description: Demonstrates how to use the piano_analytics_plugin plugin.
-version: 0.0.8
+version: 0.0.9
 publish_to: 'none'
 
 environment:
