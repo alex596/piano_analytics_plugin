@@ -1,3 +1,8 @@
+## 0.0.8
+* Fix : Set configuration without visitorId if this is empty (**Thanks to @kayb-swr**)
+* Fix(adnroid) : Delete namespace declaration for android 14 (**Thanks to @NikBenson**)
+* Refacto : Format code
+
 ## 0.0.7
 * Fix : Delete PADefaultConfiguration_1.swift because is duplicate (**Thanks to @oscarnarsomnie**)
 
