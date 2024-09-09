@@ -82,9 +82,12 @@ class _MyAppState extends State<MyApp> {
                 children: [
                   MaterialButton(
                     color: Colors.lightBlueAccent,
-                    child: const Text("Track event", style: TextStyle(color: Colors.white)),
+                    child: const Text("Track event",
+                        style: TextStyle(color: Colors.white)),
                     onPressed: () {
-                      pianoAnalyticsPlugin.sendEvent(eventName: eventName, data: fakeData).onError(
+                      pianoAnalyticsPlugin
+                          .sendEvent(eventName: eventName, data: fakeData)
+                          .onError(
                             (error, stackTrace) => debugPrint(
                               error.toString(),
                             ),

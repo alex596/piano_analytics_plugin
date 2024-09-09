@@ -5,7 +5,9 @@ import 'package:piano_analytics_plugin/piano_analytics_plugin_method_channel.dar
 import 'package:piano_analytics_plugin/piano_analytics_plugin_platform_interface.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-class MockPianoAnalyticsPluginPlatform with MockPlatformInterfaceMixin implements PianoAnalyticsPluginPlatform {
+class MockPianoAnalyticsPluginPlatform
+    with MockPlatformInterfaceMixin
+    implements PianoAnalyticsPluginPlatform {
   @override
   Future<void> setConfiguration({
     required String collectDomain,
@@ -35,7 +37,8 @@ class MockPianoAnalyticsPluginPlatform with MockPlatformInterfaceMixin implement
 }
 
 void main() {
-  final PianoAnalyticsPluginPlatform initialPlatform = PianoAnalyticsPluginPlatform.instance;
+  final PianoAnalyticsPluginPlatform initialPlatform =
+      PianoAnalyticsPluginPlatform.instance;
 
   test(
     '$MethodChannelPianoAnalyticsPlugin is the default instance',
@@ -51,7 +54,8 @@ void main() {
     'setConfiguration',
     () async {
       PianoAnalyticsPlugin pianoAnalyticsPlugin = PianoAnalyticsPlugin();
-      MockPianoAnalyticsPluginPlatform fakePlatform = MockPianoAnalyticsPluginPlatform();
+      MockPianoAnalyticsPluginPlatform fakePlatform =
+          MockPianoAnalyticsPluginPlatform();
       PianoAnalyticsPluginPlatform.instance = fakePlatform;
       expect(
         pianoAnalyticsPlugin.setConfiguration(
@@ -67,7 +71,8 @@ void main() {
     'setConfiguration with privacyDefaultMode',
     () async {
       PianoAnalyticsPlugin pianoAnalyticsPlugin = PianoAnalyticsPlugin();
-      MockPianoAnalyticsPluginPlatform fakePlatform = MockPianoAnalyticsPluginPlatform();
+      MockPianoAnalyticsPluginPlatform fakePlatform =
+          MockPianoAnalyticsPluginPlatform();
       PianoAnalyticsPluginPlatform.instance = fakePlatform;
       expect(
         pianoAnalyticsPlugin.setConfiguration(
@@ -84,7 +89,8 @@ void main() {
     'setConfiguration with visitorId',
     () async {
       PianoAnalyticsPlugin pianoAnalyticsPlugin = PianoAnalyticsPlugin();
-      MockPianoAnalyticsPluginPlatform fakePlatform = MockPianoAnalyticsPluginPlatform();
+      MockPianoAnalyticsPluginPlatform fakePlatform =
+          MockPianoAnalyticsPluginPlatform();
       PianoAnalyticsPluginPlatform.instance = fakePlatform;
       expect(
         pianoAnalyticsPlugin.setConfiguration(
@@ -101,7 +107,8 @@ void main() {
     'sendEvent',
     () async {
       PianoAnalyticsPlugin pianoAnalyticsPlugin = PianoAnalyticsPlugin();
-      MockPianoAnalyticsPluginPlatform fakePlatform = MockPianoAnalyticsPluginPlatform();
+      MockPianoAnalyticsPluginPlatform fakePlatform =
+          MockPianoAnalyticsPluginPlatform();
       PianoAnalyticsPluginPlatform.instance = fakePlatform;
 
       expect(

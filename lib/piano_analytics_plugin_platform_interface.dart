@@ -9,7 +9,8 @@ abstract class PianoAnalyticsPluginPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static PianoAnalyticsPluginPlatform _instance = MethodChannelPianoAnalyticsPlugin();
+  static PianoAnalyticsPluginPlatform _instance =
+      MethodChannelPianoAnalyticsPlugin();
 
   /// The default instance of [PianoAnalyticsPluginPlatform] to use.
   ///
