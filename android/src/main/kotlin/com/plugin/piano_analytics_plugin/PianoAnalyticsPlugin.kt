@@ -51,10 +51,15 @@ class PianoAnalyticsPlugin : FlutterPlugin, MethodCallHandler {
                     val site: Int = arguments["site"] as Int
                     val path: String? = arguments["path"] as String?
                     val customUserAgent: String? = arguments["customUserAgent"] as String?
-                    val crashDetection: Boolean = arguments["crashDetection"] as Boolean ?: PADefaultConfiguration.DEFAULT_CRASH_DETECTION
-                    val sessionBackgroundDuration: Int = arguments["sessionBackgroundDuration"] as Int ?: PADefaultConfiguration.DEFAULT_SESSION_BACKGROUND_DURATION
-                    val ignoreLimitedAdvertisingTracking: Boolean = arguments["ignoreLimitedAdvertisingTracking"] as Boolean ?: PADefaultConfiguration.DEFAULT_IGNORE_LIMITED_ADVERTISING_TRACKING
-                    val sendEventWhenOptout: Boolean = arguments["sendEventWhenOptout"] as Boolean ?: PADefaultConfiguration.DEFAULT_SEND_WHEN_OPT_OUT
+                    val crashDetection: Boolean =
+                        arguments["crashDetection"] as Boolean ?: PADefaultConfiguration.DEFAULT_CRASH_DETECTION
+                    val sessionBackgroundDuration: Int = arguments["sessionBackgroundDuration"] as Int
+                        ?: PADefaultConfiguration.DEFAULT_SESSION_BACKGROUND_DURATION
+                    val ignoreLimitedAdvertisingTracking: Boolean =
+                        arguments["ignoreLimitedAdvertisingTracking"] as Boolean
+                            ?: PADefaultConfiguration.DEFAULT_IGNORE_LIMITED_ADVERTISING_TRACKING
+                    val sendEventWhenOptout: Boolean =
+                        arguments["sendEventWhenOptout"] as Boolean ?: PADefaultConfiguration.DEFAULT_SEND_WHEN_OPT_OUT
 
                     var privacyDefaultModeP: PrivacyDefaultModeP
                     try {
@@ -65,34 +70,42 @@ class PianoAnalyticsPlugin : FlutterPlugin, MethodCallHandler {
 
                     var offlineEncryptionModeP: OfflineEncryptionModeP
                     try {
-                        offlineEncryptionModeP = OfflineEncryptionModeP.valueOf(arguments["offlineEncryptionMode"] as String)
+                        offlineEncryptionModeP =
+                            OfflineEncryptionModeP.valueOf(arguments["offlineEncryptionMode"] as String)
                     } catch (e: Exception) {
-                        offlineEncryptionModeP = OfflineEncryptionModeP.valueOf(PADefaultConfiguration.DEFAULT_ENCRYPTION_MODE)
+                        offlineEncryptionModeP =
+                            OfflineEncryptionModeP.valueOf(PADefaultConfiguration.DEFAULT_ENCRYPTION_MODE)
                     }
 
                     var offlineStorageModeP: OfflineStorageModeP
                     try {
                         offlineStorageModeP = OfflineStorageModeP.valueOf(arguments["offlineStorageMode"] as String)
                     } catch (e: Exception) {
-                        offlineStorageModeP = OfflineStorageModeP.valueOf(PADefaultConfiguration.DEFAULT_OFFLINE_STORAGE_MODE)
+                        offlineStorageModeP =
+                            OfflineStorageModeP.valueOf(PADefaultConfiguration.DEFAULT_OFFLINE_STORAGE_MODE)
                     }
 
-                    val storageLifetimePrivacy: Int = arguments["storageLifetimePrivacy"] as Int ?: PADefaultConfiguration.DEFAULT_STORAGE_LIFETIME_PRIVACY
-                    val storageLifetimeUser: Int = arguments["storageLifetimeUser"] as Int ?: PADefaultConfiguration.DEFAULT_STORAGE_LIFETIME_USER
-                    val storageLifetimeVisitor: Int = arguments["storageLifetimeVisitor"] as Int ?: PADefaultConfiguration.DEFAULT_STORAGE_LIFETIME_VISITOR
+                    val storageLifetimePrivacy: Int = arguments["storageLifetimePrivacy"] as Int
+                        ?: PADefaultConfiguration.DEFAULT_STORAGE_LIFETIME_PRIVACY
+                    val storageLifetimeUser: Int =
+                        arguments["storageLifetimeUser"] as Int ?: PADefaultConfiguration.DEFAULT_STORAGE_LIFETIME_USER
+                    val storageLifetimeVisitor: Int = arguments["storageLifetimeVisitor"] as Int
+                        ?: PADefaultConfiguration.DEFAULT_STORAGE_LIFETIME_VISITOR
 
                     var visitorStorageModeP: VisitorStorageModeP = VisitorStorageModeP.fixed
                     try {
                         visitorStorageModeP = VisitorStorageModeP.valueOf(arguments["visitorStorageMode"] as String)
                     } catch (e: Exception) {
-                        visitorStorageModeP = VisitorStorageModeP.valueOf(PADefaultConfiguration.DEFAULT_VISITOR_STORAGE_MODE)
+                        visitorStorageModeP =
+                            VisitorStorageModeP.valueOf(PADefaultConfiguration.DEFAULT_VISITOR_STORAGE_MODE)
                     }
 
                     var visitorIdTypeModeP: VisitorIdTypeModeP = VisitorIdTypeModeP.uuid
                     try {
                         visitorIdTypeModeP = VisitorIdTypeModeP.valueOf(arguments["visitorIdTypeMode"] as String)
                     } catch (e: Exception) {
-                        visitorIdTypeModeP = VisitorIdTypeModeP.valueOf(PADefaultConfiguration.DEFAULT_VISITOR_ID_TYPE_MODE)
+                        visitorIdTypeModeP =
+                            VisitorIdTypeModeP.valueOf(PADefaultConfiguration.DEFAULT_VISITOR_ID_TYPE_MODE)
                     }
 
                     val visitorId: String? = arguments["visitorId"] as String?

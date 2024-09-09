@@ -27,7 +27,7 @@ enum VisitorStorageMode {
   relative,
 }
 
-enum VisitorIdTypeMode{
+enum VisitorIdTypeMode {
   uuid,
   idfa,
   idfv,

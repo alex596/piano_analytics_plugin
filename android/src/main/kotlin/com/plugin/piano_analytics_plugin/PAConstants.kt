@@ -16,8 +16,10 @@ enum class PrivacyDefaultModeP(val sdkName: String) {
 enum class OfflineEncryptionModeP(val sdkName: EncryptionMode) {
     ///  No encryption stored data
     none(EncryptionMode.NONE),
+
     /// encryption stored data enabled if device is compatible
     ifCompatible(EncryptionMode.IF_COMPATIBLE),
+
     /// /!\ encryption stored data enable AND if not data not stored
     force(EncryptionMode.FORCE)
 }
@@ -25,8 +27,10 @@ enum class OfflineEncryptionModeP(val sdkName: EncryptionMode) {
 enum class OfflineStorageModeP(val sdkName: OfflineStorageMode) {
     /// Hits are stored in all cases and requires calling method to send
     always(OfflineStorageMode.ALWAYS),
+
     /// Hits are sent if network is available, stored otherwise
     required(OfflineStorageMode.REQUIRED),
+
     /// Hits are sent if network is available, lost otherwise
     never(OfflineStorageMode.NEVER)
 }
@@ -34,6 +38,7 @@ enum class OfflineStorageModeP(val sdkName: OfflineStorageMode) {
 enum class VisitorStorageModeP(val sdkName: VisitorStorageMode) {
     /// FIXED : UUID will expires in all cases
     fixed(VisitorStorageMode.FIXED),
+
     /// RELATIVE : UUID will expires in rare cases
     relative(VisitorStorageMode.RELATIVE)
 }

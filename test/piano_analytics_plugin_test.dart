@@ -5,9 +5,7 @@ import 'package:piano_analytics_plugin/piano_analytics_plugin_method_channel.dar
 import 'package:piano_analytics_plugin/piano_analytics_plugin_platform_interface.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-class MockPianoAnalyticsPluginPlatform
-    with MockPlatformInterfaceMixin
-    implements PianoAnalyticsPluginPlatform {
+class MockPianoAnalyticsPluginPlatform with MockPlatformInterfaceMixin implements PianoAnalyticsPluginPlatform {
   @override
   Future<void> setConfiguration({
     required String collectDomain,
