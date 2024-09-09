@@ -97,27 +97,51 @@ class PianoAnalyticsPlugin : FlutterPlugin, MethodCallHandler {
 
                     val visitorId: String? = arguments["visitorId"] as String?
 
-                    pa.setConfiguration(
-                        Configuration.Builder()
-                            .withCollectDomain(collectDomain)
-                            .withSite(site)
-                            .withPath(path)
-                            .withCustomUserAgent(customUserAgent)
-                            .enableCrashDetection(crashDetection)
-                            .withSessionBackgroundDuration(sessionBackgroundDuration)
-                            .enableIgnoreLimitedAdTracking(ignoreLimitedAdvertisingTracking)
-                            .enableSendEventWhenOptOut(sendEventWhenOptout)
-                            .withPrivacyDefaultMode(privacyDefaultModeP.sdkName)
-                            .withEncryptionMode(offlineEncryptionModeP.sdkName)
-                            .withOfflineStorageMode(offlineStorageModeP.sdkName)
-                            .withStorageLifetimePrivacy(storageLifetimePrivacy)
-                            .withStorageLifetimeUser(storageLifetimeUser)
-                            .withStorageLifetimeVisitor(storageLifetimeVisitor)
-                            .withVisitorStorageMode(visitorStorageModeP.sdkName)
-                            .withVisitorIDType(visitorIdTypeModeP.sdkName)
-                            .withVisitorID(visitorId)
-                            .build()
-                    )
+                    /// Set the configuration with visitorID
+                    if (visitorId != null && visitorId.isNotEmpty()) {
+                        pa.setConfiguration(
+                            Configuration.Builder()
+                                .withCollectDomain(collectDomain)
+                                .withSite(site)
+                                .withPath(path)
+                                .withCustomUserAgent(customUserAgent)
+                                .enableCrashDetection(crashDetection)
+                                .withSessionBackgroundDuration(sessionBackgroundDuration)
+                                .enableIgnoreLimitedAdTracking(ignoreLimitedAdvertisingTracking)
+                                .enableSendEventWhenOptOut(sendEventWhenOptout)
+                                .withPrivacyDefaultMode(privacyDefaultModeP.sdkName)
+                                .withEncryptionMode(offlineEncryptionModeP.sdkName)
+                                .withOfflineStorageMode(offlineStorageModeP.sdkName)
+                                .withStorageLifetimePrivacy(storageLifetimePrivacy)
+                                .withStorageLifetimeUser(storageLifetimeUser)
+                                .withStorageLifetimeVisitor(storageLifetimeVisitor)
+                                .withVisitorStorageMode(visitorStorageModeP.sdkName)
+                                .withVisitorIDType(visitorIdTypeModeP.sdkName)
+                                .withVisitorID(visitorId)
+                                .build()
+                        )
+                    } else {
+                        pa.setConfiguration(
+                            Configuration.Builder()
+                                .withCollectDomain(collectDomain)
+                                .withSite(site)
+                                .withPath(path)
+                                .withCustomUserAgent(customUserAgent)
+                                .enableCrashDetection(crashDetection)
+                                .withSessionBackgroundDuration(sessionBackgroundDuration)
+                                .enableIgnoreLimitedAdTracking(ignoreLimitedAdvertisingTracking)
+                                .enableSendEventWhenOptOut(sendEventWhenOptout)
+                                .withPrivacyDefaultMode(privacyDefaultModeP.sdkName)
+                                .withEncryptionMode(offlineEncryptionModeP.sdkName)
+                                .withOfflineStorageMode(offlineStorageModeP.sdkName)
+                                .withStorageLifetimePrivacy(storageLifetimePrivacy)
+                                .withStorageLifetimeUser(storageLifetimeUser)
+                                .withStorageLifetimeVisitor(storageLifetimeVisitor)
+                                .withVisitorStorageMode(visitorStorageModeP.sdkName)
+                                .withVisitorIDType(visitorIdTypeModeP.sdkName)
+                                .build()
+                        )
+                    }
                 }
 
                 PAEvents.SEND_EVENT -> {
