@@ -25,7 +25,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace "com.plugin.example.piano_analytics_plugin"
+    namespace "com.plugin.piano_analytics_plugin"
     compileSdkVersion 33
 
     compileOptions {
